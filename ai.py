@@ -23,11 +23,10 @@ def comp(PROMPT, MaxToken=50):
             max_tokens=MaxToken,
             temperature=0
         )
-        return response.choices[0].message.content
+        return print(GREEN+response.choices[0].message.content+RESET)
     else:
         return print(RED + 'Incorrect input'+ RESET)
 
 PROMPT = input('Ask ChatGPT a question: ')
 
-response= comp(PROMPT, MaxToken=3000)
-print(GREEN+response+RESET)
+comp(PROMPT, MaxToken=3000)
